@@ -2,7 +2,7 @@
 
 for ((i=0; i <10; i++))
 do	
-	array[$i]=$((RANDOM%1000))
+	array[$i]=$((RANDOM%1000+100))
 	echo ${array[i]}
 done
 
