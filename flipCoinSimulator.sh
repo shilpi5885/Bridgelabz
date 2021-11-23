@@ -19,6 +19,6 @@ do
 		if [[ ${tails} == 21 ]]; then
     			echo "WINNER IS TAILS"
 		break
-		
+		fi		
 	fi
 done
