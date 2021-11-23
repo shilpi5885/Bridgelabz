@@ -24,7 +24,20 @@ test_arr[((counter++))]=${test_var[key4]}
 
 echo "Array before sorting: ${test_arr[@]}"
 
-test_arr=($(for each in ${test_arr[@]}; do echo $each; done | sort))
+for ((i = 0; i<4; i++))
+do
+    
+    for((j = 0; j<4-i-1; j++))
+    do
+    
+        if [ ${test_arr[j]} -gt ${test_arr[$((j+1))]} ]
+        then
+            temp=${test_arr[j]}
+            test_arr[$j]=${test_arr[$((j+1))]}  
+            test_arr[$((j+1))]=$temp
+        fi
+    done
+done
 
 echo "Array in ascending order: ${test_arr[@]}"
 
