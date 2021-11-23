@@ -2,8 +2,11 @@ heads=0
 tails=0
 declare -A singlet
 declare -A doublet
+declare -A triplet
 
-for((i=1;i<=10;i++))
+read -p "Enter the no of times the coin should flip: " n
+
+for((i=1;i<=n;i++))
 
 do
 	singlet[$i]=$((RANDOM%2))
@@ -14,12 +17,72 @@ do
 	fi
 done	
 
-hp=$((heads*10))
-tp=$((tails*10))
+echo "Singlet: ${singlet[@]}"
 
-echo ${singlet[@]}
-echo "Percentage of Heads: $hp"
-echo "Percentage of Tails: $tp"
+for (( i=1; i<=n; i++ ))
+do
+  flip1=$((RANDOM%2))
+  flip2=$((RANDOM%2))
+  case $flip1$flip2 in
+	00)
+	   echo "Heads Heads"
+	   (( doublet[HH]++ ))
+	   ;;
+	01)
+	   echo "Heads Tails"
+	   (( doublet[HT]++ ))
+	   ;;
+	10)
+	   echo "Tails Heads"
+	   (( doublet[TH]++ ))
+	   ;;
+	11)
+	   echo "Tails Tails"
+	   (( doublet[TT]++ ))
+	   ;;
+  esac
+done
+echo "Doublet: ${!doublet[@]}"
 
+for (( i=1; i<=n; i++ ))
+do
+  flip1=$((RANDOM%2))
+  flip2=$((RANDOM%2))
+  flip3=$((RANDOM%2))
+  case $flip1$flip2$flip3 in
+	000)
+	   echo "Heads Heads Heads"
+	   (( triplet[HHH]++ ))
+	   ;;
+	001)
+	   echo "Heads Heads Tails"
+	   (( triplet[HHT]++ ))
+	   ;;
+	010)
+	   echo "Heads Tails Heads"
+	   (( triplet[HTH]++ ))
+	   ;;
+	011)
+	   echo "Heads Tails Tails" 
+	   (( triplet[HTT]++ ))
+	   ;;
+	100)
+	   echo "Tails Heads Heads"
+	   (( triplet[THH]++ ))
+	   ;;
+	101)
+	   echo "Tails Heads Tails"
+	   (( triplet[THT]++ ))
+	   ;;
+	110)
+	   echo "Tails Tails Heads" 
+	   (( triplet[TTH]++ ))
+	   ;;
+	111)
+	   echo "Tails Tails Tails" 
+	   (( triplet[TTT]++ ))
+	   ;;
+  esac
+done
 
-
+echo "Triplet: ${!triplet[@]}"
