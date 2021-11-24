@@ -20,8 +20,6 @@ do
 			if [ $(( array[$i]+array[$j]+array[$k] )) == 0 ]
 			then
 				echo "Sum of ${array[i]} ${array[j]} and ${array[k]} is zero"
-			else
-				echo "No 3 elements found whose sum is zero"
 			fi
 		done
 	done	
