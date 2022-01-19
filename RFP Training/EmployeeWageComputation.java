@@ -7,7 +7,7 @@ public class EmployeeWageComputation {
 	public static final int WORKING_DAYS = 20;
 	public static final int MAX_HOURS = 100;
 
-	public static void main(String[] args) {
+	public static int calculateEmpWage() {
 		int workHours = 0, totalWorkHours = 0, workingdaysPerMonth =0; 
 		System.out.println("Employee Wage Computaion Program On Master Branch");
 		while (totalWorkHours <= MAX_HOURS && workingdaysPerMonth < WORKING_DAYS) {
@@ -31,7 +31,9 @@ public class EmployeeWageComputation {
 			totalWorkHours += workHours;
 		}
 		int empWage = totalWorkHours * WAGE_PER_HOUR;
-		System.out.println("Total Employee Wage = "+empWage);
+		return empWage;
 	}
-	
+	public static void main(String[] args) {
+		System.out.println("Employee Wage = "+calculateEmpWage());
+	}
 }
