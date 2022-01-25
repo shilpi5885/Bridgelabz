@@ -16,16 +16,13 @@ public class EmployeeWageComputation {
 			switch (empCheck)
 			{
 			case 0:
-				workHours=8;
-				//System.out.println("Employee is present full time");
+				workHours=8; //Employee is present full time
 				break;
 			case 1:
-				workHours=4;
-				//System.out.println("Employee is present full time");
+				workHours=4; //Employee is present half time
 				break;
 			default:
-				workHours=0;
-				//System.out.println("Employee is absent");
+				workHours=0; //Employee is absent
 				break;
 			}
 			totalWorkHours += workHours;
