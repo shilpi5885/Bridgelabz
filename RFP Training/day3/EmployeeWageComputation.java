@@ -24,7 +24,7 @@ public class EmployeeWageComputation {
 				break;
 			case 1:
 				workHours = 4;
-				// Employee is present full time
+				// Employee is present half time
 				break;
 			default:
 				workHours = 0;
