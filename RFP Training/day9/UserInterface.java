@@ -1,6 +1,5 @@
 package com.bridgelabz.demo;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
