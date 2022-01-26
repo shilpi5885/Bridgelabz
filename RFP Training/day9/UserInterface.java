@@ -12,10 +12,4 @@ public class UserInterface {
 		int choice = sc.nextInt();
 		return choice;
 	}
-
-	public void print(ArrayList<Contact> contacts) {
-		for (Contact contact : contacts) {
-			System.out.println(contact);
-		}
-	}
 }
