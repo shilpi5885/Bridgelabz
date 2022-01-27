@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public class ContactController {
 
-	private ArrayList<Contact> contacts = new ArrayList<Contact>();
+    private ArrayList<Contact> contacts = new ArrayList<Contact>();
 
-	public Contact addNewContact() {
-
+    public Contact addNewContact() {
 		Contact contact = new Contact();
 		Address address = new Address();
 
@@ -21,7 +20,7 @@ public class ContactController {
 		address.setZip(ScannerUtil.getInt("Enter zip code of the contact"));
 
 		contact.setAddress(address);
-		contacts.add(contact);
+    contacts.add(contact);
 		return contact;
 
 	}
