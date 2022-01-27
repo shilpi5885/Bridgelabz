@@ -15,6 +15,11 @@ public class AddressBookMain {
 			case 2:
 				contactController.editByName(ScannerUtil.getString("Enter contact name to edit"));
 				break;
+			case 3:
+				contactController.deleteContact(ScannerUtil.getString("Enter contact name to delete"));
+				break;
+			default:
+				break;
 			}
 			x = ScannerUtil.getInt("Do you want to continue...press 1");
 		} while (x == 1);

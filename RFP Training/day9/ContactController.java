@@ -1,10 +1,13 @@
 package com.bridgelabz.demo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactController {
 
-    private ArrayList<Contact> contacts = new ArrayList<Contact>();
+	private List<Contact> contacts = new ArrayList<Contact>();
+
+	public Contact addNewContact() {
 
     public Contact addNewContact() {
 		Contact contact = new Contact();
@@ -46,5 +49,17 @@ public class ContactController {
 		address.setZip(ScannerUtil.getInt("Enter new zip code of the contact"));
 
 		contact.setAddress(address);
+	}
+
+	public void deleteContact(String name) {
+		for (Contact contact : contacts) {
+			if (name.equals(contact.firstName)) {
+				contacts.remove(contact);
+				System.out.println("Contact removed successfully.");
+				break;
+			} else {
+				System.out.println("Contact nor found");
+			}
+		}
 	}
 }
