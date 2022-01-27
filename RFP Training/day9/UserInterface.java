@@ -10,5 +10,5 @@ public class UserInterface {
 		System.out.println("Select \n 1.Add Contact \n 2.Edit Contact \n 3.Delete Contact");
 		int choice = sc.nextInt();
 		return choice;
-	}
+    }
 }
