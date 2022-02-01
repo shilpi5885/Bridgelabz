@@ -1,6 +1,4 @@
 package com.bridgelabz.demo;
-
-
 import java.lang.Math;
 
 public class EmployeeWageComputation {
