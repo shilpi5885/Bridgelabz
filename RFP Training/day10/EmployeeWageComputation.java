@@ -1,12 +1,14 @@
 package com.bridgelabz.demo;
 
+
 import java.lang.Math;
 
 public class EmployeeWageComputation {
 
-	public static int calculateEmpWage(wagePerHour,workingdaysPerMonth, totalWorkHours) { 
+	public static int calculateEmpWage(int wagePerHour,int workingDays, int maxHHours) { 
 		System.out.println("Employee Wage Computaion Program On Master Branch");
-		while (totalWorkHours <= MAX_HOURS && workingdaysPerMonth < WORKING_DAYS) {
+		int totalWorkHours =0, workingdaysPerMonth = 0, workHours = 0;
+		while (totalWorkHours <= maxHHours && workingdaysPerMonth < workingDays) {
 			workingdaysPerMonth++;
 			int empCheck = (int) (Math.random()*10 % 2);
 			switch (empCheck)
@@ -31,6 +33,7 @@ public class EmployeeWageComputation {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Employee Wage = " + calculateEmpWage());
+		System.out.println("Employee Wage = " + calculateEmpWage(20,22,110));
 	}
 }
+
