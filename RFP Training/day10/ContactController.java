@@ -7,7 +7,7 @@ public class ContactController {
 	
 	private List<Contact> addressBook = new ArrayList<Contact>();
 
-	public Contact addNewContact() {
+	public List<Contact> addNewContact() {
 
 		Contact contact = new Contact();
 		Address address = new Address();
@@ -23,7 +23,7 @@ public class ContactController {
 
 		contact.setAddress(address);
 		addressBook.add(contact);
-		return contact;
+		return addressBook;
 
 	}
 
