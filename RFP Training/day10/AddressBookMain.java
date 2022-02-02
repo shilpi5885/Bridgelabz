@@ -1,10 +1,15 @@
 package com.bridgelabz.demo;
 
+import java.util.ArrayList;
+import java.util.List
+
 public class AddressBookMain {
 
 	public void handleUserSelection() {
 		ContactController contactController = new ContactController();
 		UserInterface userInterface = new UserInterface();
+		List<Contact> addressBook = new ArrayList<Contact>();
+		AddressBookDict addressBookDict = new AddressBookDict();
 		int x = 1;
 		do {
 			int choice = userInterface.showMainMenu();
@@ -19,7 +24,10 @@ public class AddressBookMain {
 				contactController.deleteContact(ScannerUtil.getString("Enter contact name to delete"));
 				break;
 			case 4:
-				contactController.addMultipleContacts();
+				addressBook = contactController.addMultipleContacts();
+				break;
+			case 5:
+				addressBookDict.addAddressBook(ScannerUtil.getString("Enter name of Address Book"),addressBook);
 				break;
 			default:
 				break;
