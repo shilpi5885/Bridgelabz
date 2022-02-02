@@ -23,8 +23,7 @@ public class ContactController {
 
 		contact.setAddress(address);
 		addressBook.add(contact);
-		return addressBook;
-
+		return addressBook
 	}
 
 	public void editByName(String name) {
